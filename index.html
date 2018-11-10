@@ -252,7 +252,7 @@
       background.classList.add('open');
 
       const dropdown = this.querySelector('.dropdown');
-      const dropdownCoords = this.getBoundingClientRect();
+      const dropdownCoords = dropdown.getBoundingClientRect();
       const navCoords = nav.getBoundingClientRect();
 
       const coords = {
@@ -262,8 +262,9 @@
         left: dropdownCoords.left - navCoords.left,
       };
 
-      background.style.setProperty('')
-
+      background.style.setProperty('width', `${coords.width}px`);
+      background.style.setProperty('height', `${coords.height}px`);
+      background.style.setProperty('transform', `translate(${coords.left}px, ${coords.top}px)`);
       // lets finish it later
 
     }
